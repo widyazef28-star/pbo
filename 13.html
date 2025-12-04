@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoh Elemen HTML</title>
+</head>
+<body>
+
+<h1>Demo Elemen HTML</h1>
+
+<!-- 1. PARAGRAF -->
+<h2>1. Paragraf</h2>
+<p>Ini adalah contoh paragraf sederhana di HTML. Paragraf digunakan untuk menampilkan teks biasa.</p>
+
+<!-- 2. TABLE -->
+<h2>2. Tabel</h2>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Nama</th>
+        <th>Umur</th>
+    </tr>
+    <tr>
+        <td>Widya</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Alya</td>
+        <td>21</td>
+    </tr>
+</table>
+
+<!-- 3. IMAGE -->
+<h2>3. Gambar</h2>
+<img src="https://via.placeholder.com/150" alt="Contoh Gambar">
+
+<!-- 4. FORM INPUT -->
+<h2>4. Form Input</h2>
+<h3>Masukkan Nama Anda</h3>
+<input type="text" id="nameInput" placeholder="Nama Anda">
+<button onclick="tampilkanNama()">Submit</button>
+
+<h2 id="output"></h2>
+
+<script>
+function tampilkanNama() {
+    let nama = document.getElementById("nameInput").value;
+    document.getElementById("output").innerText = "Halo, " + nama + "!";
+}
+</script>
+
+</body>
+</html>
