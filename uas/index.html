@@ -5,63 +5,89 @@
   <title>Aplikasi Login</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #a8d8ff, #d0ebff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #99CCFF; /* WARNA BARU */
       margin: 0;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .box {
+
+    .login-container {
       background: #ffffff;
-      padding: 30px 25px;
-      width: 320px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      padding: 40px 30px;
+      width: 340px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      text-align: left;
+    }
+
+    .login-container h2 {
       text-align: center;
+      margin-bottom: 25px;
+      color: #007acc;
     }
-    h2 {
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
       margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #007acc;
+      font-size: 15px;
+      outline: none;
     }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 14px;
+
+    .login-container input:focus {
+      border-color: #005f99;
+      box-shadow: 0 0 5px #005f99;
     }
-    button {
+
+    .login-container button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      border-radius: 10px;
       font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
     }
+
     #loginBtn {
-      background: linear-gradient(90deg, #6fb8ff, #9fd9ff); /* tombol login biru muda */
+      background-color: #007acc;
       color: white;
-      margin-top: 12px;
+      margin-bottom: 10px;
     }
+
+    #loginBtn:hover {
+      background-color: #005f99;
+    }
+
     #cancelBtn {
-      margin-top: 8px;
-      background: #f0f0f0;
-      color: #444;
+      background-color: #cce6ff;
+      color: #007acc;
     }
+
+    #cancelBtn:hover {
+      background-color: #b3dcff;
+    }
+
     #logoutBtn {
-      margin-top: 15px;
-      background: #e53935;
+      background-color: #ff6666;
       color: white;
     }
+
     .user-info {
       text-align: center;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="box" id="app"></div>
+  <div class="login-container" id="app"></div>
+
   <script>
     class LoginApp {
       constructor(containerId) {
@@ -82,11 +108,11 @@
 
       renderLogin() {
         this.container.innerHTML = `
-          <h2>Login</h2>
+          <h2>Masuk Sistem</h2>
           <input type="text" id="username" placeholder="Username">
           <input type="password" id="password" placeholder="Password">
           <button id="loginBtn">Login</button>
-          <button id="cancelBtn">Cancel</button>
+          <button id="cancelBtn">Batal</button>
         `;
         document.getElementById('loginBtn')
           .addEventListener('click', () => this.login());
@@ -113,7 +139,7 @@
       renderUserPage() {
         this.container.innerHTML = `
           <div class="user-info">
-            <h2>Berhasil login</h2>
+            <h2>Login Berhasil</h2>
             <p>Selamat datang di sistem</p>
             <button id="logoutBtn">Logout</button>
           </div>
